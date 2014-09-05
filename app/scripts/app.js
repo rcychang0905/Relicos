@@ -12,7 +12,8 @@ angular
   .module('relicosApp', [
     'Relicuos.Directives',
     'Relicuos.Controllers',
-    'ui.router'
+    'ui.router',
+    'ngResource'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');

@@ -2,7 +2,7 @@
  * Created by Ronnie on 2014-05-26.
  */
 
-angular.module('Relicuos.Directives').directive('singleEvent', ['$http', function ($http) {
+angular.module('Relicuos.Directives').directive('singleEvent', ['$http', '$resource', function ($http, $resource) {
 
   'use strict';
 
@@ -24,27 +24,17 @@ angular.module('Relicuos.Directives').directive('singleEvent', ['$http', functio
 
     link: function (scope) {
 
-      scope.clickHome = function () {
+      var updateSingleEventBetsCount = $resource(
+        'http://localhost:1234/updateSingleEventBetsCount'
+      );
 
-        var updateParams = [{ id: scope.eventId }, { betsOnHome: 1 }];
-
-        $http.post("/updateSingleEventBetsCount", updateParams).success(function (data) {
-          console.dir(data);
-        }).error(function () {
-          console.log("error");
-        });
+      scope.updateBetsCount = function(side){
+        console.log(side);
+        var updateParams = (side === 'home' ? [{ id: scope.eventId }, { betsOnHome: 1 }] : [{ id: scope.eventId }, { betsOnAway: 1 }]);
+        console.log(updateParams);
+        updateSingleEventBetsCount.save(updateParams);
       };
 
-      scope.clickAway = function () {
-
-        var updateParams = [{ id: scope.eventId }, { betsOnAway: 1 }];
-
-        $http.post("/updateSingleEventBetsCount", updateParams).success(function (data) {
-          console.dir(data);
-        }).error(function () {
-          console.log("error");
-        });
-      };
     }
   };
 
