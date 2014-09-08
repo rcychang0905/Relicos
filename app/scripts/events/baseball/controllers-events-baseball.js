@@ -2,9 +2,7 @@
  * Created by Ronnie on 2014-05-22.
  */
 
-angular.module('Relicuos.Controllers', []);
-
-angular.module('Relicuos.Controllers').controller('home', ['$scope', '$resource', function ($scope, $resource) {
+angular.module('Relicos.Events').controller('baseballEventsCtrl', ['$scope', '$resource', function ($scope, $resource) {
 
   'use strict';
 

@@ -2,7 +2,7 @@
  * Created by Ronnie on 2014-05-26.
  */
 
-angular.module('Relicuos.Directives').directive('singleEvent', ['$http', '$resource', function ($http, $resource) {
+angular.module('Relicos.Events').directive('singleEvent', ['$http', '$resource', function ($http, $resource) {
 
   'use strict';
 
@@ -12,7 +12,7 @@ angular.module('Relicuos.Directives').directive('singleEvent', ['$http', '$resou
 
     replace: 'true',
 
-    templateUrl: 'scripts/directives/directives-single-event-tpl.html',
+    templateUrl: 'scripts/events/shared/directives-single-event-tpl.html',
 
     scope: {
       home: '@',

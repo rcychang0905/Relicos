@@ -9,9 +9,8 @@
  * Main module of the application.
  */
 angular
-  .module('relicosApp', [
-    'Relicuos.Directives',
-    'Relicuos.Controllers',
+  .module('Relicos', [
+    'Relicos.Events',
     'ui.router',
     'ngResource'
   ])
@@ -21,8 +20,8 @@ angular
     $stateProvider.state('home', {
 
       url: '/',
-      templateUrl: 'views/mlb-event.tpl.html',
-      controller: 'home'
+      templateUrl: '../views/events/baseball/mlb-event.tpl.html',
+      controller: 'baseballEventsCtrl'
 
     });
   });
