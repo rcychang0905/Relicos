@@ -16,4 +16,12 @@ angular.module('Relicos.Events').controller('baseballEventsCtrl', ['$scope', '$r
     $scope.events = data;
   });
 
+  $scope.toggleSelected = function(){
+    $scope.selected = !$scope.selected;
+  };
+
+  $scope.isSelected = function(){
+    return $scope.selected;
+  };
+
 }]);
